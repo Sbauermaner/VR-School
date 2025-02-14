@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class ClassroomManager : MonoBehaviour
 {
-    public List<UserAvatar> users = new List<UserAvatar>();
-    public Whiteboard whiteboard;
-    public VoiceChat voiceChat;
+    public List<GroupAssignment> assignments = new List<GroupAssignment>();
+    public List<LivePoll> polls = new List<LivePoll>();
+    public LessonRecorder recorder;
 
     void Start()
     {
@@ -15,19 +15,30 @@ public class ClassroomManager : MonoBehaviour
     private void InitializeClassroom()
     {
         Debug.Log("Виртуальный класс инициализирован.");
-        whiteboard.Initialize();
-        voiceChat.Initialize();
+        recorder = new LessonRecorder();
     }
 
-    public void AddUser(UserAvatar user)
+    public void CreateAssignment(string title, string description)
     {
-        users.Add(user);
-        Debug.Log($"Пользователь {user.username} присоединился к классу.");
+        var assignment = new GroupAssignment
+        {
+            assignmentId = $"assignment{assignments.Count + 1}",
+            title = title,
+            description = description
+        };
+        assignments.Add(assignment);
+        Debug.Log($"Задание создано: {title}");
     }
 
-    public void RemoveUser(UserAvatar user)
+    public void CreatePoll(string question, List<string> options)
     {
-        users.Remove(user);
-        Debug.Log($"Пользователь {user.username} покинул класс.");
+        var poll = new LivePoll
+        {
+            pollId = $"poll{polls.Count + 1}",
+            question = question,
+            options = options
+        };
+        polls.Add(poll);
+        Debug.Log($"Опрос создан: {question}");
     }
 }
