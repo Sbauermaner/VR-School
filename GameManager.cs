@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        Debug.Log("Игра запущена!");
+        aiManager.SendMessageToAI("Привет, как дела?", response =>
+        {
+            Debug.Log($"Ответ ИИ: {response}");
+        });
     }
 }
