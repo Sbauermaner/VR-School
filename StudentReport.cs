@@ -52,3 +52,10 @@ public class StudentReport
         }
     }
 }
+[System.Serializable]
+public class StudentReport
+{
+    // ... существующие поля ...
+    public List<string> preferredTopics; // Любимые темы (например, "математика", "история")
+    public Dictionary<string, int> timeSpentPerTopic; // Время, затраченное на каждую тему
+}
