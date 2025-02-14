@@ -1,10 +1,9 @@
-[SerializeField] private AIConfig aiConfig;
-
 private void LoadAPIKey()
 {
     if (aiConfig != null && !string.IsNullOrEmpty(aiConfig.apiKey))
     {
-        apiKey = aiConfig.apiKey;
+        // Дешифруем API-ключ перед использованием
+        apiKey = EncryptionHelper.Decrypt(aiConfig.apiKey);
     }
     else
     {
