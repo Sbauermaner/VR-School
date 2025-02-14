@@ -1,0 +1,2 @@
+string encryptedKey = EncryptionHelper.Encrypt("your_openai_api_key");
+Debug.Log($"Encrypted Key: {encryptedKey}");
