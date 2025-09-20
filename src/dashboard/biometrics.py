@@ -1,4 +1,4 @@
-class BioMetricsTracker:
+class BiometricsTracker:
     def __init__(self):
         self.metrics = {}
 

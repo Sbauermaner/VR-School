@@ -1,12 +1,12 @@
 from .schedule import ScheduleManager
-from .biometrics import BioMetricsTracker
+from .biometrics import BiometricsTracker
 from .neuro_monitor import NeuroMonitor
 
 class Dashboard:
     def __init__(self, username):
         self.username = username
         self.schedule = ScheduleManager()
-        self.biometrics = BioMetricsTracker()
+        self.biometrics = BiometricsTracker()
         self.neuro = NeuroMonitor()
 
     def display_dashboard(self):
