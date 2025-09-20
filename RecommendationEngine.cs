@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Unity.Barracuda; // Для работы с ONNX-моделями
 
